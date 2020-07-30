@@ -8,7 +8,6 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,8 +34,9 @@ if (!isset($_SESSION['id'])) {
 
     <?php include 'navbar.php'?>
 <br/>
-  
-    <div class="container form-div">
+<br/>
+<br/>
+    <div class="container">
     <div class="card text-center">
   <div class="card-header">
     Featured
