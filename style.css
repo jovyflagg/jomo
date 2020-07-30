@@ -1,0 +1,32 @@
+.form-div {
+    margin: 400px auto 400px;
+    padding: 25px 15px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+form p{
+    font-size: .89em;
+}
+.logout{
+    color: red;
+}
+
+.nav-link{
+float:right;
+}
+
+form #activity{
+    font-size: 30px;
+    color: dodgerblue;
+}
+
+.btn-clickme{
+
+}
