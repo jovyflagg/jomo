@@ -1,5 +1,4 @@
 <?php
-
 require_once 'controllers/authController.php';
 
 if (!isset($_SESSION['id'])) {
@@ -20,39 +19,47 @@ if (!isset($_SESSION['id'])) {
     />
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-
   </head>
-  <body>
+
+  <!-- BODY  -->
+  <body class="body-index">
     <!-- NAVBAR -->
-
-    <?php include 'navbar.php'?>
-<br/>
-<br/>
-<br/>
+    <?php include 'navbar.php'?>  <br/><br/><br/>
+    <section id="section-card">
+<!-- CARD  -->
     <div class="container">
-    <div class="card text-center">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <p class="card-title" id="activity" >Special title treatment</p>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary" onclick="a();">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
+    <h4 class="hello">
+        Hello, <?php echo $_SESSION['username'];?>!
+    </h4>
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title" id="activity" >Click button to generate activity</h3>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary" onclick="randomActivity();">Random</a>
+        </div>
+        <div class="card-footer text-muted">
+          Category:<h5 class="category" id="category">(example: art)</h5>
+        </div>
+      </div>
+      <?php include 'columncards.php' ?>
+     <br>
     </div>
+</section>
+    <!-- ABOUT JOMO  -->
+    <section id="section-about">
+    <?php include 'about.php';?>
+</section>
+   <!-- FOOTER   -->
+    <?php include 'footer.php';?>
 
-    <!-- Optional JavaScript -->
+    <!-- JavaScript -->
     <!-- BORED API -->
     <script>
       var myRequest = "http://www.boredapi.com/api/activity/";
@@ -63,19 +70,22 @@ if (!isset($_SESSION['id'])) {
       //     alert("second then");
       //   };
       // }
-      var activityNode = "";
-      function a() {
+
+      // RANDOM ACTIVITY FUNCTION
+      function randomActivity(){
         fetch(myRequest)
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
             console.log(data.activity);
+            console.log(data.type);
             document.getElementById("activity").innerHTML = data.activity;
+            document.getElementById("category").innerHTML = data.type;
           })
           .catch(console.error);
       }
     </script>
-
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

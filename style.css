@@ -1,5 +1,5 @@
-.form-div {
-    margin: 400px auto 400px;
+.form-div{
+    margin: 100px auto 100px;
     padding: 25px 15px 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -15,18 +15,29 @@ form p{
     font-size: .89em;
 }
 .logout{
-    color: red;
+    color: darkorange;
 }
 
 .nav-link{
 float:right;
 }
 
-form #activity{
-    font-size: 30px;
-    color: dodgerblue;
+.jumbotron{
+    background-color: darkorange !important;
+    color: white;
 }
 
-.btn-clickme{
-
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
 }
+
+.hello{
+    color: darkorange;
+}
+

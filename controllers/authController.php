@@ -68,7 +68,7 @@ if (isset($_POST['signup-btn'])) {
 
 
             //set flash message
-            $_SESSION['message'] = "You are now logged in!";
+            $_SESSION['message'] = "Get Started!";
             $_SESSION['alert-class'] = "alert-success";
             header('location: index.php');
             exit();
