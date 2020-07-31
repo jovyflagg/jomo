@@ -51,7 +51,7 @@ body {
 <body>
 <br/>
 <br/>
-<p>Resize the browser window to see the effect.</p>
+<p>Fun at home, fun everywhere at no cost!</p>
 <div class="row">
   <div class="column">
     <div class="column-card">

@@ -19,57 +19,65 @@ if (!isset($_SESSION['id'])) {
     />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="style.css" />
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <!-- BODY  -->
-  <body class="body-index">
+  <body>
     <!-- NAVBAR -->
-    <?php include 'navbar.php'?>  <br/><br/><br/>
-    <section id="section-card">
-<!-- CARD  -->
+    <?php include 'navbar.php'?>  
+
+    <br/> <br/> <br/> 
+    <!-- CARD  -->
     <div class="container">
-    <h4 class="hello">
-        Hello, <?php echo $_SESSION['username'];?>!
-    </h4>
-      <div class="card text-center">
-        <div class="card-body">
-          <h3 class="card-title" id="activity" >Click button to generate activity</h3>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary" onclick="randomActivity();">Random</a>
-        </div>
-        <div class="card-footer text-muted">
+    <h4 class="hello">Hello, <?php echo $_SESSION['username'];?>!</h4>
+    <div class="card text-center"> 
+    <div class="card-body">
+    <h3 class="card-title" id="activity" >Click button to generate activity</h3>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" onclick="randomActivity();">Random Category</a>
+    </div>
+    <div class="card-footer text-muted">
           Category:<h5 class="category" id="category">(example: art)</h5>
         </div>
-      </div>
-      <?php include 'columncards.php' ?>
-     <br>
+        <div>
+            <a href="#" class="btn btn-primary" onclick="busywork();">Busy Work</a>
+            <a href="#" class="btn btn-danger" onclick="charity();">Charity</a>
+            <a href="#" class="btn btn-success" onclick="cooking();">Cooking</a>
+            <a href="#" class="btn btn-info" onclick="diy();">DIY</a>
+            <a href="#" class="btn btn-warning" onclick="educational();">Educational</a>
+            <a href="#" class="btn btn-danger" onclick="music();">Music</a>
+            <a href="#" class="btn btn-warning" onclick="recreational();">Recreational</a>
+            <a href="#" class="btn btn-primary" onclick="relaxation();">Relaxation</a>
+            <a href="#" class="btn btn-success" onclick="social();">Social</a>
+        </div>
+    <br/>
     </div>
-</section>
+    <?php include 'columncards.php' ?>
+    </div> 
+
     <!-- ABOUT JOMO  -->
-    <section id="section-about">
-    <?php include 'about.php';?>
-</section>
-   <!-- FOOTER   -->
-    <?php include 'footer.php';?>
+    
+   <section id="section-about"> 
+     <?php include 'about.php';?>
+    <br/> <br/><br/>
+    </section>
+
+ <!-- FOOTER   -->
+ <?php include 'footer.php';?>
+
 
     <!-- JavaScript -->
+    <script src="categories.js"></script>
     <!-- BORED API -->
     <script>
       var myRequest = "http://www.boredapi.com/api/activity/";
-      // function callBoredAPI(){
-      //   fetch('http://www.boredapi.com/api/activity/')
-      //   .then(response => response.json())
-      //   .then(data => {
-      //     alert("second then");
-      //   };
-      // }
 
       // RANDOM ACTIVITY FUNCTION
       function randomActivity(){
@@ -80,7 +88,7 @@ if (!isset($_SESSION['id'])) {
             console.log(data.activity);
             console.log(data.type);
             document.getElementById("activity").innerHTML = data.activity;
-            document.getElementById("category").innerHTML = data.type;
+            document.getElementById("category").innerHTML = "random";
           })
           .catch(console.error);
       }
@@ -103,4 +111,5 @@ if (!isset($_SESSION['id'])) {
       crossorigin="anonymous"
     ></script>
   </body>
-</html>
+
+  </html>
