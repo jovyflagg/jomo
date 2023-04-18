@@ -2,7 +2,7 @@
 
 Welcome to J.O.M.O --- Joy of Missing Out
 
-Description: A webapp that allows you to find activities to fight boredom. 
+Description: A webapp created during the beginning of pandemic that allows you to find activities to fight boredom. 
 
 
 1. Users are able to generate an activity randomly with or without choosing category. 
